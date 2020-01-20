@@ -35,8 +35,32 @@ mvn myretail:run
 
 The backend server will start at <http://localhost:8080>.
 
-Example to post data :
+Examples to post data :
 
-Example to get data by id
 
-Example to update data.
+```bash
+curl --location --request POST 'localhost:8080/products' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":13860428,"name":"The Big Lebowski (Blu-ray) (Widescreen)","current_price":{"value": 13.49,"currency_code":"USD"}}'
+```
+
+
+```bash
+curl --location --request POST 'localhost:8080/products' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id" : 13045467, "name": "Bose headphones", "current_price" : {"value" : 35.00, "currency": "USD"}}'
+```
+
+Example to get data by id:
+
+```bash
+curl --location --request GET 'localhost:8080/products/13860428'
+```
+
+Example to update data:
+
+```bash
+curl --location --request PUT 'localhost:8080/products/13045467' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":13860428,"name":"Samsung","current_price" : {"value" : 45.00, "currency": "CAD"}}'
+```
