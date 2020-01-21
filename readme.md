@@ -62,5 +62,5 @@ Example to update data:
 ```bash
 curl --location --request PUT 'localhost:8080/products/13045467' \
 --header 'Content-Type: application/json' \
---data-raw '{"id":13860428,"name":"Samsung","current_price" : {"value" : 45.00, "currency": "CAD"}}'
+--data-raw '{"id":13860429,"name":"Samsung","current_price" : {"value" : 45.00, "currency": "CAD"}}'
 ```
