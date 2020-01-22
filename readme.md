@@ -30,7 +30,7 @@ java -jar target/myretail-0.0.1-SNAPSHOT.jar
 Alternatively, you can run the app without packaging it using -
 
 ```bash
-mvn myretail:run
+mvn spring-boot:run
 ```
 
 The backend server will start at <http://localhost:8080>.
