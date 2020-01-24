@@ -45,10 +45,18 @@ public class ProductController {
 		productRepository.save(product);
 	}
 	
-	 @PutMapping("/products") 
-	 public void updateProduct(@RequestBody Product product){
-		 LOG.info("Updating Product.");
-		 productRepository.save(product);
+	 @PutMapping("/products/{id}") 
+	 public Product updateProduct(@RequestBody Product newproduct, @PathVariable Long id){
+		 LOG.info("Updating Product price with ID: {}.", id);
+		 return productRepository.findById(id)
+			      .map(product -> {
+			    	product.setPrice(newproduct.getPrice());
+			        return productRepository.save(product);
+			      }).orElseGet(() -> {
+			    	  newproduct.setId(id);
+				        return productRepository.save(newproduct);
+				  });
 	 }
-	 	 
+	 
+	 
 }

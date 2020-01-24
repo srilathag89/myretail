@@ -48,7 +48,7 @@ curl --location --request POST 'localhost:8080/products' \
 ```bash
 curl --location --request POST 'localhost:8080/products' \
 --header 'Content-Type: application/json' \
---data-raw '{"id" : 13045467, "name": "Bose headphones", "current_price" : {"value" : 35.00, "currency": "USD"}}'
+--data-raw '{"id" : 13045467, "name": "Bose headphones", "current_price" : {"value" : 35.00, "currency_code": "USD"}}'
 ```
 
 Example to get data by id:
@@ -62,5 +62,5 @@ Example to update data:
 ```bash
 curl --location --request PUT 'localhost:8080/products/13045467' \
 --header 'Content-Type: application/json' \
---data-raw '{"id":13860429,"name":"Samsung","current_price" : {"value" : 45.00, "currency": "CAD"}}'
+--data-raw '{"id":13860429,"name":"Samsung","current_price" : {"value" : 45.00, "currency_code": "CAD"}}'
 ```
